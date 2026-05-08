@@ -1,6 +1,5 @@
 🌍 CarbonFootprint-Tracker: Logistics Sustainability Analysis
-📌 Project Overview 
-English: This project is a Python-based decision support tool designed to calculate and visualize carbon emissions in logistics operations. It helps logistics managers choose the most sustainable vehicle type based on a specific carbon threshold.
+📌 Project Overview: This project is a Python-based decision support tool designed to calculate and visualize carbon emissions in logistics operations. It helps logistics managers choose the most sustainable vehicle type based on a specific carbon threshold.
 
 🚀 Features 
 Multi-Vehicle Simulation: Analyzes Heavy, Medium, and Light vehicles. 
