@@ -1,0 +1,60 @@
+# --- LOGISTICS SUSTAINABILITY ANALYTICS ---
+
+# COMMON LIMIT (Karbon Kotası)
+carbon_limit = 500000  # 500kg CO2 limit
+
+# 1. SCENARIO: HEAVY DUTY TRUCK (Tır)
+distance_heavy = 1000
+emission_heavy = 900
+total_heavy = distance_heavy * emission_heavy
+
+print("SCENARIO 1: Heavy Duty Truck")
+print("Total CO2:", total_heavy, "grams")
+
+if total_heavy > carbon_limit:
+    print("RESULT: ALERT! High Carbon Risk - Limit Exceeded")
+else:
+    print("RESULT: Sustainable Route - Approved")
+
+print("-" * 30) # Araya çizgi çeker
+
+# 2. SCENARIO: MEDIUM TRUCK (Kamyon)
+distance_medium = 1000
+emission_medium = 450
+total_medium = distance_medium * emission_medium
+
+print("SCENARIO 2: Medium Truck")
+print("Total CO2:", total_medium, "grams")
+
+if total_medium > carbon_limit:
+    print("RESULT: ALERT! High Carbon Risk")
+else:
+    print("RESULT: Sustainable Route - Approved")
+
+print("-" * 30)
+
+# 3. SCENARIO: LIGHT VEHICLE (Minibüs)
+distance_light = 1000
+emission_light = 150
+total_light = distance_light * emission_light
+
+print("SCENARIO 3: Light Vehicle")
+print("Total CO2:", total_light, "grams")
+
+if total_light > carbon_limit:
+    print("RESULT: ALERT! High Carbon Risk")
+else:
+    print("RESULT: Sustainable Route - Approved")
+
+SCENARIO 1: Heavy Duty Truck
+Total CO2: 900000 grams
+RESULT: ALERT! High Carbon Risk - Limit Exceeded
+------------------------------
+SCENARIO 2: Medium Truck
+Total CO2: 450000 grams
+RESULT: Sustainable Route - Approved
+------------------------------
+SCENARIO 3: Light Vehicle
+Total CO2: 150000 grams
+RESULT: Sustainable Route - Approved
+
