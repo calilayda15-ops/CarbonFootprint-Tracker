@@ -1,0 +1,73 @@
+# --- LOGISTICS SUSTAINABILITY ANALYTICS ---
+
+# COMMON LIMIT (Karbon Kotası)
+carbon_limit = 500000  # 500kg CO2 limit
+
+# 1. SCENARIO: HEAVY DUTY TRUCK (Tır)
+distance_heavy = 1000
+emission_heavy = 900
+total_heavy = distance_heavy * emission_heavy
+
+print("SCENARIO 1: Heavy Duty Truck")
+print("Total CO2:", total_heavy, "grams")
+
+if total_heavy > carbon_limit:
+    print("RESULT: ALERT! High Carbon Risk - Limit Exceeded")
+else:
+    print("RESULT: Sustainable Route - Approved")
+
+print("-" * 30) # Araya çizgi çeker
+
+# 2. SCENARIO: MEDIUM TRUCK (Kamyon)
+distance_medium = 1000
+emission_medium = 450
+total_medium = distance_medium * emission_medium
+
+print("SCENARIO 2: Medium Truck")
+print("Total CO2:", total_medium, "grams")
+
+if total_medium > carbon_limit:
+    print("RESULT: ALERT! High Carbon Risk")
+else:
+    print("RESULT: Sustainable Route - Approved")
+
+print("-" * 30)
+
+# 3. SCENARIO: LIGHT VEHICLE (Minibüs)
+distance_light = 1000
+emission_light = 150
+total_light = distance_light * emission_light
+
+print("SCENARIO 3: Light Vehicle")
+print("Total CO2:", total_light, "grams")
+
+if total_light > carbon_limit:
+    print("RESULT: ALERT! High Carbon Risk")
+else:
+    print("RESULT: Sustainable Route - Approved")
+    import matplotlib.pyplot as plt
+
+    # Verilerimiz (Senaryoların isimleri ve sonuçları)
+    scenarios = ['Heavy Truck', 'Medium Truck', 'Light Vehicle']
+    emissions = [900000, 450000, 150000]  # 1000km için hesapladığın değerler
+    carbon_limit = 500000
+
+    # Grafik boyutu ve renk ayarları
+    plt.figure(figsize=(10, 6))
+    colors = ['red' if e > carbon_limit else 'green' for e in emissions]
+
+    # Sütun grafiğini oluşturma
+    plt.bar(scenarios, emissions, color=colors)
+
+    # Limit çizgisini ekleme (Kritik Eşik)
+    plt.axhline(y=carbon_limit, color='darkblue', linestyle='--', label='Max Carbon Limit')
+
+    # Grafik başlıkları ve etiketler
+    plt.title('Logistics Carbon Footprint Analysis', fontsize=15)
+    plt.xlabel('Vehicle Types', fontsize=12)
+    plt.ylabel('Total CO2 (grams)', fontsize=12)
+    plt.legend()
+
+    # Grafiği göster
+    plt.show()
+    
